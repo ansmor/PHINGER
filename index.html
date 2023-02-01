@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>PHINGER</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<style>
+ @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    
+:root {
+	--pink1: #31ebc6;
+	--pink2: #2ab89b;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	margin: 0;
+}
+
+body {
+	align-items: center;
+	background-color: #FEF8FC;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Roboto', sans-serif;
+	justify-content: center;
+	height: 100vh;
+	text-align: center;
+}
+
+.panel-container {
+	background-image: linear-gradient(to bottom right, var(--pink1), var(--pink2));
+	border-radius: 15px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+	margin: 15px;
+}
+
+.panel-container h3 {
+	margin-bottom: 30px;
+	letter-spacing: 0.5px;
+}
+
+.panel-container input, .panel-container button {
+	border: none;
+	border-radius: 3px;
+	display: block;
+	font-size: 12px;
+	padding: 7px 10px;
+	margin: 15px 0;
+	width: 100%;
+}
+
+.panel-container button {
+	background-image: linear-gradient(to bottom right, var(--pink1), var(--pink2));
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: #fff;
+}
+
+.panel-container small {
+	font-size: 0.9em;
+	line-height: 10px;
+	opacity: 0.5;
+}
+    
+.panel-container medium {
+	font-size: 1.2em;    
+    opacity: 0.8;
+}
+
+
+select {text-align-last:center; }
+    
+</style> 
+
+<body>
+<div class="panel-container">
+	<h1 style="color:black; font-weight: bold"><b>PHINGER</b></h1>
+	<medium><b style="color: black; font-size=24px">PH</b>armacogenomics test <b style="color: black">IN</b>dication <b style="color: black">GE</b>nerato<b style="color: black">R</b></medium>
+    <br><br>
+	<small>
+		A small tool to help harmonising the indication text <br/>
+		in <i>DPYD </i>pharmacogenomics reports
+	</small> <br><br>
+<body>
+    <form>
+        <p>
+        <label><b>1. </b>select cancer type:</label><br>
+        <select class="cancer_type">
+            <option value="cancer type: unspecified" selected="selected"> </option>
+            <option value="colorectal ca">colorectal</option>
+            <option value="HNO ca">hals nasen ohren (HNO)</option>
+            <option value="breast ca">breast</option>
+            <option value="brain ca">brain</option>
+            <option value="pancreas ca">pancreas</option>
+            <option value="gastric ca">gastric</option>
+            <option value="esophageal ca">esophageal</option>
+        </select>
+        </p>
+        <p>
+        <label><b>2. </b>select chemotherapy (cx):</label><br>
+        <select class="cx_grp">
+            <option value="cx type: unspecified" selected="selected"> </option>
+	        <option value="FP based cx">fluoropyrimidine (FP) based</option>
+            <option value="5FU cx">fluorouracil (5FU)</option>
+            <option value='capecitabine tx'>capecitabine (xeloda)</option>
+            <option value='CAPOX tx'>capecitabine (xeloda) and oxaliplatin</option>
+            <option value='FOLFOX tx'>fluorouracil and oxaliplatin</option>
+            <option value='FOLFIRI tx'>fluorouracil and irinotecan</option>
+            <option value='FOLFIRINOX tx'>fluorouracil, irinotecan and oxaliplatin</option>
+        </select>
+        </p>
+        <p>
+        <label><b>3. </b>chemotherapy timing:</label><br>
+        <select class="timing">
+            <option value="cx timing: unspecified " selected="selected"> </option>
+            <option value="prospective">prospective (before cxtherapy)</option>
+            <option value="retrospective">retrospective (after cxtherapy)</option>
+        </select>
+        </p>
+        <p>
+        <label><b>4. </b>start date cx:</label><br>
+        <select class="dateDD">
+            <option value=" "> </option>
+            <option value="01/">1</option>
+            <option value='02/'>2</option>
+            <option value='03/'>3</option>
+            <option value="04/">4</option>
+            <option value='05/'>5</option>
+            <option value='06/'>6</option>
+            <option value="07/">7</option>
+            <option value='08/'>8</option>
+            <option value='09/'>9</option>
+            <option value="10/">10</option>
+            <option value='11/'>11</option>
+            <option value='12/'>12</option>
+            <option value="13/">13</option>
+            <option value='14/'>14</option>
+            <option value='15/'>15</option>
+            <option value="16/">16</option>
+            <option value='17/'>17</option>
+            <option value='18/'>18</option>
+            <option value="19/">19</option>
+            <option value='20/'>20</option>
+            <option value='21/'>21</option>
+            <option value="22/">22</option>
+            <option value='23/'>23</option>
+            <option value='24/'>24</option>
+            <option value="25/">25</option>
+            <option value='26/'>26</option>
+            <option value='27/'>27</option>
+            <option value="28/">28</option>
+            <option value='29/'>29</option>
+            <option value='30/'>30</option>
+            <option value="31/">31</option>
+        </select>
+        <select class="dateMM">
+            <option value=" "> </option>
+            <option value="01/">january</option>
+            <option value='02/'>february</option>
+            <option value='03/'>march</option>
+            <option value="04/">april</option>
+            <option value='05/'>mai</option>
+            <option value='06/'>june</option>
+            <option value="07/">july</option>
+            <option value='08/'>august</option>
+            <option value='09/'>septembre</option>
+            <option value="10/">octobre</option>
+            <option value='11/'>novembre</option>
+            <option value='12/'>decembre</option>
+        </select>
+        <select class="dateYY">
+            <option value="unspecified"> </option>
+            <option value="2021">2021</option>
+            <option value='2022'>2022</option>
+            <option value='2023'>2023</option>
+            <option value='2024'>2024</option>
+            <option value='2024'>2024</option>
+        </select>
+        </p>
+        <br>
+    </form>
+    <p>
+    <b><label style="color:black" class="gentext">GENERATED TEXT (will appear):  </label></b><br><span id="demo" style="background-color:white; color:black"></span><br>
+    <button onclick="copyToClipboard('#demo')" class="button1" style="font-size: 14px"><i class="far fa-clipboard"></i><span>  </span>COPY TO CLIPBOARD!</button><br>
+<button onClick="window.location.reload();" style="font-size: 14px"><i class="fa fa-refresh"></i>RESET</button>
+<script type="text/javascript" src="javascript_INDICATION_GENERATOR_26092022.js"></script>
+
+	<small>
+		Version 25.10.2022<br>Pharmacogenomics Lab, Bern
+	</small>
+        </body>
+    </div>
+</html>
